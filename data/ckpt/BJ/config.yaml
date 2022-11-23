@@ -1,0 +1,78 @@
+expid: 1
+runs: 2
+
+dataset_name: all_data_r1_d1_w1_30min.npz
+device: cuda:0
+log_level: INFO
+base_path: data/train_data/BJ
+save: data/ckpt/BJ
+model_name: STEGRN
+
+data:
+  cluster_num: 64
+  freq: 30min
+  name: bj_bike
+  num_for_predict: 6
+  num_for_target: 2
+  num_of_days: 1
+  num_of_hours: 1
+  num_of_weeks: 1
+  num_shift: 2
+  points_per_hour: 2
+  test_batch_size: 64
+  train_batch_size: 64
+  val_batch_size: 64
+
+model:
+  adj: affinity
+  alpha: 1
+  dropout_prob: 0.0
+  dropout_type: zoneout
+  dyn_norm: D-1
+  fusion_mode: split
+  gcn_depth: 2
+  graph_type: geo_od_dyn
+  hidden_dim: 64
+  input_dim: 2
+  loss_type: Smooth
+  num_of_head: 1
+  output_dim: 2
+  time_dim: 59
+
+  use_transform: true
+
+preprocess:
+  OD_affinity_file: OD_affinity.npy
+  datasets_file: all_data
+  geo_affinity_file: geo_affinity.npy
+  nyc_holidays:
+  - '2021-05-01'
+  - '2021-05-02'
+  - '2021-05-03'
+  - '2021-05-04'
+  - '2021-06-03'
+  - '2021-06-04'
+  - '2021-06-05'
+
+train:
+  base_lr: 0.001
+  best_mode: data/ckpt/BJ/BJ-model.pth
+  test_only: True
+  cl_decay_steps: 1000
+  epoch_start: 0
+  epochs: 200
+  global_step: 0
+  load_initial: false
+  lr_decay_ratio: 0.2
+  max_grad_norm: 5
+  milestones:
+  - 60
+  - 120
+  - 180
+  - 200
+  min_learning_rate: 2.0e-06
+  new_training: true
+  print_every: 1
+  tolerance: 100
+  use_curriculum_learning: true
+  weight_decay: 0.0001
