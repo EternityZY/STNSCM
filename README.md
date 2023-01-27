@@ -1,5 +1,5 @@
 #  Spatio-temporal Neural Structure Causal Model (STNSCM)
-This is the official release code of AAAI2023 accepted paper: "Spatial temporal Neural Structural Canal Models for Bike Flow Prediction"
+This is the official release code of AAAI2023 accepted paper: "Spatial temporal Neural Structural Causal Models for Bike Flow Prediction"
 
 The repository contains the necessary resources to run the experiments of the paper.
 
