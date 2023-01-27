@@ -42,7 +42,7 @@ If you find this repository, e.g., the code and the datasets, useful in your res
 
 ```
 @inproceedings{Zhao2023STNSCM,
-    title={Coupled Layer-wise Graph Convolution for Transportation Demand Prediction},
+    title={Spatial temporal Neural Structural Causal Models for Bike Flow Prediction},
     author={Zhao, Yu and Deng, Pan and Liu, Junting and Jia, Xiaofeng and Wang, Mulan},
     booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
     year={2023}
